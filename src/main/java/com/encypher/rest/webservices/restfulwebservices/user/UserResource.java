@@ -1,8 +1,6 @@
 package com.encypher.rest.webservices.restfulwebservices.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,7 +24,12 @@ public class UserResource {
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable int id) {
        return userDaoService.findUser(id);
+    }
 
+    // API to POST a user {POST }
+    @PostMapping("/users")
+    public void createUser(@RequestBody User user) {
+        userDaoService.saveUser(user);
     }
 
 }
