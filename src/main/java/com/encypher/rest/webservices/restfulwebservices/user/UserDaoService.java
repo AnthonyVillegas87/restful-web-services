@@ -9,6 +9,10 @@ import java.util.List;
 @Component
 public class UserDaoService {
 
+
+    // UserDao -> Static List
+    // for testing purpose, the UserDao will retrieve data from a static list of users
+    // I will make use of JPA/Hibernate -> Database
     private static List<User> users = new ArrayList<>();
 
     static {
@@ -24,6 +28,17 @@ public class UserDaoService {
         return users;
     }
 
+    public User findUser(int id) {
+        for(User user : users) {
+            if(user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
+
+
+        // TO-DO ---->  Refactor to use functional programming later
+    }
 
 
 }
