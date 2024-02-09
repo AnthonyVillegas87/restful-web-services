@@ -48,6 +48,19 @@ public class UserDaoService {
         return user;
     }
 
+    public void deleteById(int id) {
+        List<User> userList = users;
+        for(int i = 0; i < userList.size(); i++) {
+            User user = userList.get(i);
+            if(user.getId() == id) {
+                userList.remove(i);
+                break;
+            }
+        }
+
+        // TODO --> ANOTHER TASK FOR FUNCTIONAL PROGRAMMING
+    }
+
 
 
 }
