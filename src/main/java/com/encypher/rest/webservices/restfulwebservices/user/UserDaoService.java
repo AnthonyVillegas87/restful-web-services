@@ -15,16 +15,16 @@ public class UserDaoService {
     // I will make use of JPA/Hibernate -> Database
 
     private static int usersCount = 0;
-    private static List<User> users = new ArrayList<>();
+   private static List<User> users = new ArrayList<>();
 
-    static {
-        users.add(new User(++usersCount, "John", LocalDate.now().minusYears(20)));
-        users.add(new User(++usersCount, "Ray", LocalDate.now().minusYears(10)));
-        users.add(new User(++usersCount, "Jim", LocalDate.now().minusYears(30)));
-        users.add(new User(++usersCount, "James", LocalDate.now().minusYears(15)));
-        users.add(new User(++usersCount, "Cristina", LocalDate.now().minusYears(35)));
-
-    }
+//    static {
+//        users.add(new User(++usersCount, "John", LocalDate.now().minusYears(20)));
+//        users.add(new User(++usersCount, "Ray", LocalDate.now().minusYears(10)));
+//        users.add(new User(++usersCount, "Jim", LocalDate.now().minusYears(30)));
+//        users.add(new User(++usersCount, "James", LocalDate.now().minusYears(15)));
+//        users.add(new User(++usersCount, "Cristina", LocalDate.now().minusYears(35)));
+//
+//    }
 
     public List<User> findAll() {
         return users;
