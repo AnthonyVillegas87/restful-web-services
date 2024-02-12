@@ -2,6 +2,7 @@ package com.encypher.rest.webservices.restfulwebservices.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 
 @Entity
 public class Post {
@@ -10,6 +11,7 @@ public class Post {
     @GeneratedValue
     private Integer id;
 
+    @Min(10)
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -17,6 +19,14 @@ public class Post {
     private User user;
     public Integer getId() {
         return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setId(Integer id) {
